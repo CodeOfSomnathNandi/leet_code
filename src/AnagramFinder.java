@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.Objects;
 
 /**
  * Given two strings s and t, return true if t is an anagram of s, and false otherwise.
@@ -31,32 +30,30 @@ public class AnagramFinder {
 
         HashMap<Character, Integer> sCharCount = new HashMap<>();
         HashMap<Character, Integer> tCharCount = new HashMap<>();
+        Integer value;
+        char sc, tc;
+
 
         for (int i = 0; i < s.length(); i++) {
-            char sc = s.charAt(i);
-            char tc = t.charAt(i);
+            sc = s.charAt(i);
+            tc = t.charAt(i);
 
             if (!sCharCount.containsKey(sc)) {
                 sCharCount.put(sc, 1);
             } else {
-                Integer value = sCharCount.get(sc);
+                value = sCharCount.get(sc);
                 sCharCount.put(sc, value+1);
             }
 
             if (!tCharCount.containsKey(tc)) {
                 tCharCount.put(tc, 1);
             } else {
-                Integer value = tCharCount.get(tc);
+                value = tCharCount.get(tc);
                 tCharCount.put(tc, value+1);
             }
         }
 
-        for (var key : sCharCount.keySet()) {
-            if (!Objects.equals(sCharCount.get(key), tCharCount.get(key))) {
-                return false;
-            }
-        }
-        return true;
+        return sCharCount.equals(tCharCount);
     }
 
     public static void main(String[] args) {
