@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 
 public class MajorityElementFinder {
     public int majorityElement(int[] nums) {
@@ -14,8 +16,6 @@ public class MajorityElementFinder {
                 return_key = key;
             }
         }
-
-
         return return_key;
     }
 }
