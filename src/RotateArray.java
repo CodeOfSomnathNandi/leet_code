@@ -1,7 +1,5 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.Stack;
 
 public class RotateArray {
     public void rotate(int[] nums, int k) {
